@@ -4,15 +4,15 @@
       <div class="mon-title">监控方式</div>
       <div class="mon-img">
         <div class="mon-img-li">
-          <img src="/static/images/monitor/camera.png"/>
+          <img src="/images/monitor/camera.png"/>
           <p>自定义监控</p>
         </div>
         <div class="mon-img-li">
-          <img src="/static/images/monitor/code.png"/>
+          <img src="/images/monitor/code.png"/>
           <p>代码监控</p>
         </div>
         <div class="mon-img-li">
-          <img src="/static/images/monitor/sdk.png"/>
+          <img src="/images/monitor/sdk.png"/>
           <p>SDK监控</p>
         </div>
       </div>

@@ -78,7 +78,7 @@
               <p class="ul-text">{{ item.title }}</p>
             </li>
           </ul>
-          <router-link to="/video" class="product-more">更多视频</router-link>
+          <nuxt-link to="/video/" class="product-more">更多视频</nuxt-link>
         </div>
       </div>
     </div>

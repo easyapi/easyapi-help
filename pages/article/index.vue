@@ -11,37 +11,14 @@
             <li v-for="item in menuList" :data-name="item.name" :data-id="item.articleCategoryId"
                 v-bind:class="name === item.name?'orange':''"
                 @click="openNews">
-              <!--<a style="color: #ff7603" v-if="name === item.name">-->
-              <!--{{item.name}}-->
-              <!--</a>-->
-              <!--<a v-else>-->
               {{ item.name }}
-              <!--</a>-->
             </li>
-            <!--<li>团队管理</li>-->
-            <!--<li>创建项目</li>-->
-            <!--<li>项目设置</li>-->
-            <!--<li>监控系统</li>-->
-            <!--<li>网管系统</li>-->
-            <!--<li>常见问题</li>-->
           </ul>
         </div>
-
-        <div v-if="detail===0">
-          <!--显示列表-->
-          <div class="main-content">
-            <div class="main-content-title">{{ name }}</div>
-            <a :href="'/article?id=6&detail='+item.articleId" class="main-content-a"
-               v-for="item in aList" v-if="aList.length>0">{{ item.title }}</a>
-            <!--<a  v-else>暂时没有数据</a>-->
-          </div>
-        </div>
-        <!--显示详情-->
-        <div v-else>
-          <div class="main-content">
-            <div class="main-content-title">{{ title }}</div>
-            <div v-html="content"></div>
-          </div>
+        <div class="main-content">
+          <div class="main-content-title">{{ name }}</div>
+          <a :href="'/article?id=6&detail='+item.articleId" class="main-content-a" v-for="item in articles"
+             v-if="articles.length>0">{{ item.title }}</a>
         </div>
       </div>
     </main>
@@ -51,101 +28,36 @@
 <script>
 import Search from '~/components/Search/index'
 import Footer from '~/components/Footer/index'
-import axios from 'axios'
+import {getArticleList, getArticleCategoryList, getArticle} from '../../api/article'
 
 export default {
-  async asyncData({query, app}, callback) {
-    let id = query.id
-    let detail = parseInt(query.detail)
-    let content = ''
-    let aList = []
-    let title = ''
-    let description = ''
-    let name = ''
-    let menuList = []
-    let resList = []
-
-
-//
-//            let [con, menu] = await Promise.all([
-//                axios.get(`http://api2.easyapi.com/api/articles.json?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8&articleCategoryId=${id}`),
-//                axios.get('http://api2.easyapi.com/api/article/categories.json?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8'),
-//            ])
-
-
-    if (detail === 0) {
-      let [con, menu] = await Promise.all([
-        axios.get(`http://api2.easyapi.com/api/articles.json?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8&articleCategoryId=${id}`),
-        axios.get('http://api2.easyapi.com/api/article/categories.json?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8'),
-      ])
-      console.log(menu.data)
-
-
-      menuList = menu.data
-      resList = con.data
-      // 不在详细页
-      if (!resList.code) {
-        content = resList.content[0].content
-        aList = resList.content
-        description = resList.content[0].articleCategory.description
-        title = resList.content[0].articleCategory.name
-        name = resList.content[0].articleCategory.name
-      } else {
-        content = ''
-        aList = []
-        description = ''
-        title = name
-      }
-    } else {
-      let [con, menu] = await Promise.all([
-        axios.get(`http://api2.easyapi.com/api/article/${detail}.json?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8`),
-        axios.get('http://api2.easyapi.com/api/article/categories.json?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8'),
-      ])
-      menuList = menu.data
-      resList = con.data
-      content = resList.content.content
-      name = resList.content.articleCategory.name
-      title = resList.content.title
-      description = resList.content.articleCategory.description
-    }
-
-
-    callback(null, {
-        menuList: menuList,
-        content: content,
-        aList: aList,
-        title: title,
-        description: description,
-        name: name,
-        detail: detail
-      }
-    )
-  },
-  created() {
-
-  },
-  mounted() {
-  },
   data() {
     return {
       menuList: [],
-      content: '',
-      aList: [],
-      title: '',
-      description: '',
-      name: '',
-      detail: 0
+      articles: [],
     }
   },
+
+  async asyncData(content) {
+    let [res1, res2] = await Promise.all([
+      getArticleList({}, content),
+      getArticleCategoryList({}, content)
+    ])
+    return {
+      articles: res1.data.content,
+      menuList: res2.data.content
+    }
+  },
+
   layout: 'header',
   head() {
     return {
-      title: this.title,
+      title: "",
       meta: [
         {charset: 'utf-8'},
         {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-        {hid: 'description', name: 'description', content: this.description},
-        {hid: 'keyswords', name: 'keyswords', content: this.title}
+        {hid: 'description', name: 'description', content: ""},
+        {hid: 'keyswords', name: 'keyswords', content: ""}
       ]
     }
   },
@@ -160,7 +72,7 @@ export default {
     },
     openNews: function (e) {
       let id = e.target.dataset.id
-      window.location.href = `/article?id=${id}&detail=0`
+      window.location.href = `/article/${id}`
     }
   }
 }

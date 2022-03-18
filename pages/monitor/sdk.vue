@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="content">
-      <div class="content-title"><img src="/static/images/monitor/android.png"/></div>
+      <div class="content-title"><img src="/images/monitor/android.png" alt=""/></div>
       <div class="content-bt">
         <div class="content-btn">Android SDK 下载</div>
         2016-10-21 V2.1.5(2016-06-03)
@@ -20,7 +20,7 @@
       <a href="">
         Android SDK包 更新历史
       </a>
-      <div class="content-title"><img src="/images/ios.png"/></div>
+      <div class="content-title"><img src="/images/monitor/ios.png" alt=""/></div>
       <div class="content-bt">
         <div class="content-btn">IOS SDK 下载</div>
         2016-10-21 V2.1.5(2016-06-03)

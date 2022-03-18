@@ -5,7 +5,7 @@
     <div class="search-box">
       <span class="box-logo"><img src="/static/images/search/search_logo.png"/></span>
       <span class="box-input"><input placeholder="搜索您的问题关键词,例如测试" v-model="searchText"/></span>
-      <a class="box-btn" :href="'/search?id='+searchText">搜索</a>
+      <a class="box-btn" :href="'/search/?id=' + searchText">搜索</a>
     </div>
   </section>
 </template>

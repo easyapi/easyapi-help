@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <router-link to="/" class="header-logo">
-        <img src="/images/logo.png"/>
+        <img src="https://qiniu.easyapi.com/market/logo.svg"/>
         <span>帮助中心</span>
       </router-link>
       <div class="header-user">
