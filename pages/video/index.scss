@@ -1,0 +1,132 @@
+.bg_white {
+  background: #f0bf43 !important;
+  border-bottom: 4px solid #bf9f43;
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  height: 46px;
+  padding: 10px 60px;
+  font-size: 16px;
+  line-height: 46px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.img > img {
+  width: 100%;
+}
+
+.bg_white > p {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bg_white > p > img {
+  width: 16px;
+  height: 16px;
+  margin-left: 20px;
+}
+
+.bg_white > p a {
+  font-size: 26px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.font_w {
+  font-weight: bold;
+}
+
+.text_c {
+  text-align: center !important;
+}
+
+.bg_white:hover {
+  color: rgba(49, 176, 213, 0.7);
+}
+
+.bg_white:active {
+  color: rgba(49, 176, 213, 0.6);
+}
+
+.card-bg {
+  background: url(/images/info/bg_github.png) no-repeat center !important;
+  background-size: cover !important;
+}
+
+.github-content {
+  padding-bottom: 70px;
+}
+
+.github-content > h1 {
+  text-align: center;
+  font-weight: normal;
+  color: #555555;
+  font-size: 4.8rem;
+  padding: 100px 0 60px;
+}
+
+.github-content > ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1200px;
+  margin: auto;
+}
+
+.github-content > ul > li {
+  width: 200px;
+  text-align: center;
+}
+
+.github-content > ul > li > a {
+  display: block;
+  margin-top: 20px;
+}
+
+.github-content > ul > li > a > span {
+  font-family: MicrosoftYaHei;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #333333;
+}
+
+.github-content > ul > li img {
+  width: 100px;
+  height: 100px;
+}
+
+.github-content li p {
+  padding-top: 10px;
+  font-family: MicrosoftYaHei;
+  font-size: 14px !important;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 22px;
+  color: #828282 !important;
+  text-align: left;
+}
+
+.u-page2 img {
+  width: 385px !important;
+  height: 223px;
+  vertical-align: top;
+}
+
+.card-content-item {
+  width: 383px !important;
+}
+
+.card span {
+  width: 383px;
+  font-family: MicrosoftYaHei;
+  font-size: 18px !important;
+  line-height: 50px;
+  border-top: none;
+  color: #000000;
+  padding: 0 !important;
+}

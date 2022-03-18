@@ -1,3 +1,5 @@
+.DS_Store
+
 # dependencies
 node_modules
 
@@ -10,5 +12,8 @@ npm-debug.log
 # Nuxt generate
 dist
 
-
+# Editor directories and files
 .idea
+
+#Lock files
+package-lock.json
