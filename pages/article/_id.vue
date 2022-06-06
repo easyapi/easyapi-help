@@ -16,7 +16,7 @@
 
 <script>
 import { getArticle } from '../../api/article'
-import Footer from '~/components/Footer/index'
+import Footer from '~/components/Footer/index.vue'
 
 export default {
   name: 'ArticleDetail',

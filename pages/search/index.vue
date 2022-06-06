@@ -14,7 +14,7 @@
 </template>
 <script>
 import Search from '~/components/Search/index'
-import Footer from '~/components/Footer/index'
+import Footer from '~/components/Footer/index.vue'
 import getUrlParam from '../../utils/getParamer'
 import {getArticleList} from '../../api/article'
 

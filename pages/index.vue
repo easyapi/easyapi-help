@@ -106,7 +106,7 @@
 
 <script>
 import Search from '~/components/Search/index'
-import Footer from '~/components/Footer/index'
+import Footer from '~/components/Footer/index.vue'
 import {getArticleList, getArticleCategoryList} from '../api/article'
 
 export default {
