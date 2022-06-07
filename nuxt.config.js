@@ -22,6 +22,13 @@ module.exports = {
     {src: '~plugins/nuxt-video-player-plugin.js', ssr: false}
   ],
   modules: ['@nuxtjs/axios'],
+  buildModules: ['@nuxtjs/tailwindcss'],
+  tailwindcss: {
+    cssPath: '@/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    exposeConfig: false,
+    config: {}
+  },
   axios: {},
   /*
   ** Customize the progress bar color
