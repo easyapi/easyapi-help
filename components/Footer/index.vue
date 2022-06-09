@@ -73,7 +73,46 @@
 </template>
 
 <script>
-import Index from './index'
+  import Index from './index'
 
-export default Index
+  export default Index
 </script>
+<style lang="scss">
+  .footer {
+    background: #3C3C3C;
+    color: gray;
+    padding: 20px 0;
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: gray;
+    margin-bottom: 10px;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  .mg-15-auto {
+    margin: 15px auto;
+  }
+
+  .color-00AEC5 {
+    color: #00AEC5;
+  }
+
+  .el-divider {
+    background-color: #606266;
+  }
+
+</style>
