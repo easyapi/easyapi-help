@@ -22,12 +22,10 @@
         </div>
       </div>
     </main>
-    <Footer></Footer>
   </div>
 </template>
 <script>
 import Search from '~/components/Search/index'
-import Footer from '~/components/Footer/index.vue'
 import {getArticleList, getArticleCategoryList, getArticle} from '../../api/article'
 
 export default {
@@ -63,8 +61,7 @@ export default {
   },
 
   components: {
-    Search,
-    Footer
+    Search
   },
   methods: {
     historyBack: function () {

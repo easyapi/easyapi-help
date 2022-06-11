@@ -4,7 +4,7 @@
       <a href="https://www.easyapi.com/">
         <img class="logo" src="https://qiniu.easyapi.com/market/logo.svg" alt=""/>
       </a>
-      <a href="https://help.easyapi.com/">
+      <a href="/">
         <span>帮助中心</span>
       </a>
       <div class="buttons">
