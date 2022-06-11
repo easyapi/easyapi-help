@@ -10,13 +10,11 @@
         </div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import { getArticle } from '../../api/article'
-import Footer from '~/components/Footer/index.vue'
+import {getArticle} from '../../api/article'
 
 export default {
   name: 'ArticleDetail',
@@ -24,13 +22,10 @@ export default {
     return {
       title: this.article.title + ' - EasyAPI帮助中心',
       meta: [
-        { hid: 'description', name: 'description', content: this.article.title },
-        { hid: 'keyword', name: 'keyword', content: '文章详情' }
+        {hid: 'description', name: 'description', content: this.article.title},
+        {hid: 'keyword', name: 'keyword', content: '文章详情'}
       ]
     }
-  },
-  components: {
-    Footer
   },
   data() {
     return {

@@ -85,16 +85,14 @@
         </div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
-  import Search from '~/components/Search/index'
-  import Footer from '~/components/Footer/index.vue'
-  import {getArticleList, getArticleCategoryList} from '../api/article'
+import Search from '~/components/Search/index'
+import {getArticleList, getArticleCategoryList} from '../api/article'
 
-  export default {
+export default {
 //        async asyncData ({req, error, params, query}, callback) {
 //            let videoList = []
 //            let title = ''
@@ -125,315 +123,314 @@
 //              }
 //            )
 //        },
-    layout: 'header',
-    head() {
-      return {
-        title: '帮助中心',
-        meta: [
-          {charset: 'utf-8'},
-          {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-          {hid: 'description', name: 'description', content: '帮助中心'},
-          {hid: 'keyswords', name: 'keyswords', content: '帮助中心'}
-        ]
-      }
-    },
-    components: {
-      Search,
-      Footer
-    },
+  layout: 'header',
+  head() {
+    return {
+      title: '帮助中心',
+      meta: [
+        {charset: 'utf-8'},
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {hid: 'description', name: 'description', content: '帮助中心'},
+        {hid: 'keyswords', name: 'keyswords', content: '帮助中心'}
+      ]
+    }
+  },
+  components: {
+    Search
+  },
 
-    data() {
-      return {
-        videoList: [],
-        title: '',
-        video: '',
-        showVideo: false,
-        question: [],
-        questionType: []
-      }
+  data() {
+    return {
+      videoList: [],
+      title: '',
+      video: '',
+      showVideo: false,
+      question: [],
+      questionType: []
+    }
+  },
+  created() {
+    let _this = this
+    getArticleList({type: "视频"}, this).then((res) => {
+      _this.videoList = res.data.content
+      _this.title = res.data.content[0].title
+      _this.video = res.data.content[0].video
+    })
+    getArticleList({type: "文章"}, this).then((res) => {
+      _this.question = res.data.content
+    })
+    getArticleCategoryList({}, this).then((res) => {
+      _this.questionType = res.data
+    })
+  },
+  methods: {
+    start() {
     },
-    created() {
-      let _this = this
-      getArticleList({type: "视频"}, this).then((res) => {
-        _this.videoList = res.data.content
-        _this.title = res.data.content[0].title
-        _this.video = res.data.content[0].video
-      })
-      getArticleList({type: "文章"}, this).then((res) => {
-        _this.question = res.data.content
-      })
-      getArticleCategoryList({}, this).then((res) => {
-        _this.questionType = res.data
-      })
+    openVideo: function (title, video) {
+      this.title = title
+      this.video = video
+      this.showVideo = true
     },
-    methods: {
-      start() {
-      },
-      openVideo: function (title, video) {
-        this.title = title
-        this.video = video
-        this.showVideo = true
-      },
-      deletePro: function () {
-        this.showVideo = false
-      }
+    deletePro: function () {
+      this.showVideo = false
     }
   }
+}
 </script>
 <style scoped lang="stylus" rel="stylesheet/stylus">
 
-  .questionType
+.questionType
+  width 100%
+  min-height 100px
+  margin-bottom 30px
+  background-color #ecf1f4
+  padding 30px 0
+
+  .questionType-title
     width 100%
-    min-height 100px
-    margin-bottom 30px
-    background-color #ecf1f4
-    padding 30px 0
-
-    .questionType-title
-      width 100%
-      height 20px
-      font-size 20px
-      text-align center
-      margin-bottom 30px
-
-    .questionType-all
-      max-width 960px
-      min-height 10px
-      display block
-      margin 0 auto
-
-      .questionType-item
-        width 32%
-        display inline-block
-        color #18c1d6
-        text-align center
-        min-height 20px
-        background-color #f9f9f9
-        font-size 12px
-        margin-bottom 10px
-        padding 20px 30px
-        margin-right 10px
-
-        img
-          width 60px
-          height 60px
-          margin-right 10px
-          border-radius 50%
-          float left
-
-        .questionType-right
-          margin-top 5px
-          float left
-          min-width 60px
-          height 60px
-
-          .questionType-right-title
-            text-align left
-            font-size 16px
-            color #000
-            margin-bottom 10px
-
-          .questionType-right-content
-            text-align left
-            font-size 12px
-            color grey
-
-  .question
-    width 100%
-    min-height 100px
+    height 20px
+    font-size 20px
+    text-align center
     margin-bottom 30px
 
-    .question-title
-      width 100%
-      height 20px
-      font-size 20px
-      text-align center
-      margin-bottom 30px
+  .questionType-all
+    max-width 960px
+    min-height 10px
+    display block
+    margin 0 auto
 
-    .question-link
-      width 33.3%
+    .questionType-item
+      width 32%
       display inline-block
       color #18c1d6
       text-align center
-      height 20px
+      min-height 20px
+      background-color #f9f9f9
       font-size 12px
       margin-bottom 10px
+      padding 20px 30px
+      margin-right 10px
 
-      a
-        color #18c1d6
+      img
+        width 60px
+        height 60px
+        margin-right 10px
+        border-radius 50%
+        float left
 
-  .pro-alert
-    position fixed
-    height 100%
+      .questionType-right
+        margin-top 5px
+        float left
+        min-width 60px
+        height 60px
+
+        .questionType-right-title
+          text-align left
+          font-size 16px
+          color #000
+          margin-bottom 10px
+
+        .questionType-right-content
+          text-align left
+          font-size 12px
+          color grey
+
+.question
+  width 100%
+  min-height 100px
+  margin-bottom 30px
+
+  .question-title
     width 100%
-    background-color rgba(0, 0, 0, .3)
-    left 0
-    top 0
+    height 20px
+    font-size 20px
+    text-align center
+    margin-bottom 30px
 
-    .pro-content
-      position absolute
-      height 365px
-      width 425px
-      left 50%
-      top 50%
-      transform translate(-50%, -50%)
-      background-color #ffffff
-      box-shadow 0 0 0
+  .question-link
+    width 33.3%
+    display inline-block
+    color #18c1d6
+    text-align center
+    height 20px
+    font-size 12px
+    margin-bottom 10px
 
-      .pro-video
-        padding 1rem
-        height 310px
+    a
+      color #18c1d6
 
-        video
-          background-color #000000
+.pro-alert
+  position fixed
+  height 100%
+  width 100%
+  background-color rgba(0, 0, 0, .3)
+  left 0
+  top 0
+
+  .pro-content
+    position absolute
+    height 365px
+    width 425px
+    left 50%
+    top 50%
+    transform translate(-50%, -50%)
+    background-color #ffffff
+    box-shadow 0 0 0
+
+    .pro-video
+      padding 1rem
+      height 310px
+
+      video
+        background-color #000000
+        height 100%
+        width 100%
+
+    .pro-title
+      position relative
+      border-bottom 1px solid grey
+      padding 15px 15px
+      font-size 14px
+
+      .pro-delete
+        cursor pointer
+        position absolute
+        right 20px
+        top 50%
+        transform translate(0, -50%)
+
+.how-answer
+  padding 5rem 0
+  width 100%
+  display block
+  margin 0 auto
+  margin-bottom 80px
+  color #000
+  background-color #ecf1f4
+
+  .how-answer-title
+    color #000
+    font-size 25px
+    margin-bottom 2rem
+
+  p
+    display flex
+    margin 0 auto
+    justify-content center
+    margin-bottom 1rem
+
+.main
+  max-width 960px
+  display block
+  margin 0 auto
+
+  .how-useing
+    .how-title
+      color #000
+      text-align left
+      font-size 22px
+      padding-bottom 1rem
+      border-bottom 1px solid #c1c1c1
+
+    .how-con
+      display inline-block
+      width 33.3%
+      margin-top 3rem
+
+      .con-title
+        font-weight 800
+        font-size 14px
+
+      .con-line
+        border 1px solid #eee
+        margin 1rem 0
+        width 2rem
+
+      ul
+        width 100%
+
+        li:before
+          content ""
+
+        li
+          margin-left 1.5rem
+          list-style circle
+          margin-bottom 1rem
+
+    .how-more
+      margin 0 auto
+      margin-top 3rem
+      max-width 8em
+      padding 1rem
+      background-color #1AB7CB
+      color #fff
+      display flex
+      align-items center
+      justify-content center
+      border-radius 5px
+
+.introduce-video
+  display block
+  width 960px
+  min-height 10px
+  margin 0 auto
+  margin-top 30px
+
+  .how-title
+    color #000
+    text-align center
+    font-size 20px
+    padding-bottom 1rem
+
+  .video-all
+    display flex
+
+.product
+  display block
+  width 960px
+  min-height 10px
+  margin 0 auto
+  margin-top 30px
+  margin-bottom 50px
+
+  .product-title
+    width 100%
+    font-size 18px
+    padding-bottom 10px
+
+  .product-more
+    display block
+    text-align center
+    border-radius 3px
+    margin 0 auto
+    color #fff
+    width 60px
+    padding 10px 30px
+    background-color #18c1d6
+
+  .product-ul
+    width 100%
+    min-height 10px
+
+    li
+      cursor pointer
+      display inline-block
+      width 210px
+      height 180px
+      margin-right 30px
+      margin-bottom 20px
+
+      .ul-img
+        width 100%
+        height 150px
+        margin-bottom 10px
+
+        img
           height 100%
           width 100%
 
-      .pro-title
-        position relative
-        border-bottom 1px solid grey
-        padding 15px 15px
-        font-size 14px
-
-        .pro-delete
-          cursor pointer
-          position absolute
-          right 20px
-          top 50%
-          transform translate(0, -50%)
-
-  .how-answer
-    padding 5rem 0
-    width 100%
-    display block
-    margin 0 auto
-    margin-bottom 80px
-    color #000
-    background-color #ecf1f4
-
-    .how-answer-title
-      color #000
-      font-size 25px
-      margin-bottom 2rem
-
-    p
-      display flex
-      margin 0 auto
-      justify-content center
-      margin-bottom 1rem
-
-  .main
-    max-width 960px
-    display block
-    margin 0 auto
-
-    .how-useing
-      .how-title
-        color #000
-        text-align left
-        font-size 22px
-        padding-bottom 1rem
-        border-bottom 1px solid #c1c1c1
-
-      .how-con
-        display inline-block
-        width 33.3%
-        margin-top 3rem
-
-        .con-title
-          font-weight 800
-          font-size 14px
-
-        .con-line
-          border 1px solid #eee
-          margin 1rem 0
-          width 2rem
-
-        ul
-          width 100%
-
-          li:before
-            content ""
-
-          li
-            margin-left 1.5rem
-            list-style circle
-            margin-bottom 1rem
-
-      .how-more
-        margin 0 auto
-        margin-top 3rem
-        max-width 8em
-        padding 1rem
-        background-color #1AB7CB
-        color #fff
-        display flex
-        align-items center
-        justify-content center
-        border-radius 5px
-
-  .introduce-video
-    display block
-    width 960px
-    min-height 10px
-    margin 0 auto
-    margin-top 30px
-
-    .how-title
-      color #000
-      text-align center
-      font-size 20px
-      padding-bottom 1rem
-
-    .video-all
-      display flex
-
-  .product
-    display block
-    width 960px
-    min-height 10px
-    margin 0 auto
-    margin-top 30px
-    margin-bottom 50px
-
-    .product-title
-      width 100%
-      font-size 18px
-      padding-bottom 10px
-
-    .product-more
-      display block
-      text-align center
-      border-radius 3px
-      margin 0 auto
-      color #fff
-      width 60px
-      padding 10px 30px
-      background-color #18c1d6
-
-    .product-ul
-      width 100%
-      min-height 10px
-
-      li
-        cursor pointer
-        display inline-block
-        width 210px
-        height 180px
-        margin-right 30px
-        margin-bottom 20px
-
-        .ul-img
-          width 100%
-          height 150px
-          margin-bottom 10px
-
-          img
-            height 100%
-            width 100%
-
-        .ul-text
-          text-align center
+      .ul-text
+        text-align center
 
 
 </style>
