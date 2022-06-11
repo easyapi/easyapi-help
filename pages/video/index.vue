@@ -24,12 +24,10 @@
         </div>
       </div>
     </div>
-    <Footer/>
   </div>
 </template>
 
 <script>
-import Footer from '~/components/Footer'
 import {getArticleList} from '../../api/article'
 
 export default {
@@ -53,7 +51,7 @@ export default {
   },
   created() {
     let _this = this
-    getArticleList({type:"视频"},this).then((res) => {
+    getArticleList({type: "视频"}, this).then((res) => {
       _this.videoList = res.data.content
       _this.title = res.data.content[0].title
       _this.video = res.data.content[0].video
@@ -68,9 +66,6 @@ export default {
     deletePro: function () {
       this.showVideo = false
     }
-  },
-  components: {
-    Footer
   }
 }
 </script>

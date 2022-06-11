@@ -9,12 +9,10 @@
         <div class="con-content">{{ item.content }}</div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 <script>
 import Search from '~/components/Search/index'
-import Footer from '~/components/Footer/index.vue'
 import getUrlParam from '../../utils/getParamer'
 import {getArticleList} from '../../api/article'
 
@@ -26,7 +24,7 @@ export default {
     this.message = id
 
     let _this = this
-    getArticleList({q: id},this).then(function (res) {
+    getArticleList({q: id}, this).then(function (res) {
       let result = []
       res.data.content.forEach((v, k, value) => {
 //                    if(!v.video){
@@ -45,8 +43,7 @@ export default {
     }
   },
   components: {
-    Search,
-    Footer
+    Search
   }
 }
 </script>
