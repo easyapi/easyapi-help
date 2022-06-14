@@ -1,75 +1,31 @@
 <template>
-  <el-row class="header">
-    <el-col :span="24" class="header-wp">
-      <a href="https://www.easyapi.com/">
-        <img class="logo" src="https://qiniu.easyapi.com/market/logo.svg" alt=""/>
-      </a>
-      <a href="/">
-        <span>帮助中心</span>
-      </a>
-      <div class="buttons">
-        <a href="https://account.easyapi.com/login">登录</a>
-        <a href="https://account.easyapi.com/signup">注册</a>
+  <div>
+    <div class="header">
+      <router-link to="/" class="header-logo">
+        <img src="https://qiniu.easyapi.com/market/logo.svg"/>
+      </router-link>
+      <div class="header-user">
+        <a v-if='!authenticationToken' href="https://account.easyapi.com/login">登陆</a>
+        <a class="login" v-if='!authenticationToken' href="https://account.easyapi.com/signup">注册</a>
       </div>
-    </el-col>
-  </el-row>
+      <div class='team-head-left' v-if='authenticationToken'>
+        <el-dropdown trigger='hover' @command='handleCommand'>
+              <span id='showTeamInfo' style='cursor: pointer'>
+                <img v-if='photo' class='team-icon' :src='photo' alt/>
+              </span>
+          <el-dropdown-menu slot='dropdown'>
+            <el-dropdown-item command='notice' icon='el-icon-edit'>我的通知</el-dropdown-item>
+            <el-dropdown-item command='edit' icon='el-icon-sort'>个人设置</el-dropdown-item>
+            <el-dropdown-item command='quitLogin' icon='el-icon-switch-button'>退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
+    </div>
+    <nuxt/>
+  </div>
 </template>
-
 <script>
-export default {
-  name: "Header"
-};
+  import Index from './index'
+
+  export default Index
 </script>
-
-<style scoped lang="scss">
-.header {
-  width: 100%;
-  background-color: #18c1d6;
-
-  .header-wp {
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    span {
-      color: #fff;
-      width: 6em
-    }
-
-    a {
-      color: #ffffff;
-    }
-  }
-}
-
-@media screen and (min-width: 450px) {
-  .header {
-    height: 72px;
-
-    .header-wp {
-      height: 72px;
-
-      .logo {
-        width: 160px;
-      }
-    }
-  }
-}
-
-
-@media screen and (max-width: 450px) {
-  .header {
-    height: 36px;
-
-    .header-wp {
-      height: 36px;
-
-      .logo {
-        width: 60px;
-      }
-    }
-  }
-}
-</style>
-
