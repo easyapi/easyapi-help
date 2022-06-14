@@ -18,6 +18,7 @@ import {getArticleList} from '../../api/article'
 
 export default {
   layout: 'header',
+  name:"search",
   mounted() {
     //            let id = this.$route.params.search_id
     let id = getUrlParam('id')
