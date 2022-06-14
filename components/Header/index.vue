@@ -21,7 +21,6 @@
         </el-dropdown>
       </div>
     </div>
-    <nuxt/>
   </div>
 </template>
 <script>
