@@ -40,7 +40,7 @@
   </div>
 </template>
 <script>
-  import Index from './index'
+import Index from './index'
 
-  export default Index
+export default Index
 </script>

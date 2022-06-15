@@ -1,6 +1,6 @@
 import './index.scss'
 import Search from '~/components/Search/index'
-import videoDialog from '~/components/videoDialog/index'
+import Video from '@/components/Video'
 import {getArticleList, getArticleCategoryList} from '../api/article'
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
   components: {
     Search,
-    videoDialog
+    Video
   },
 
   data() {

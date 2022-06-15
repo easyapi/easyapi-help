@@ -3,7 +3,7 @@
     <div class="relative w-full h-full">
       <div class="pro-content absolute top-1/2 left-1/2">
         <div class="pro-title relative">
-          {{title}}
+          {{ title }}
           <div class="pro-delete absolute cursor-pointer top-1/2" @click="deletePro">X</div>
         </div>
         <div class="pro-video p-4">
@@ -15,21 +15,21 @@
 </template>
 
 <script>
-  export default {
-    name: "index",
-    data() {
-      return {
-        showVideo: false,
-        title: "",
-        video: '',
-      }
-    },
-    methods: {
-      deletePro: function () {
-        this.showVideo = false
-      }
+export default {
+  name: "Video",
+  data() {
+    return {
+      showVideo: false,
+      title: "",
+      video: '',
+    }
+  },
+  methods: {
+    deletePro: function () {
+      this.showVideo = false
     }
   }
+}
 </script>
 
 <style scoped>

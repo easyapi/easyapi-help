@@ -6,15 +6,11 @@
         <div class="question-title text-center w-full mb-16">常见问题</div>
         <ul class="flex justify-between flex-wrap question-list">
           <li v-for="item in question" class="whitespace-nowrap overflow-hidden overflow-ellipsis text-center">
-            <a :href="'/article?id='+item.articleId+'&detail='+item.articleCategory.articleCategoryId">
+            <a :href="'/article/'+item.articleId">
               {{ item.title }}
             </a>
           </li>
         </ul>
-        <!--<div v-for="item in question"-->
-        <!--class="question-link inline-block text-center mx-4 ">-->
-
-        <!--</div>-->
       </div>
     </main>
     <div class="questionType w-full py-24">
@@ -52,7 +48,7 @@
       <p class="how-answer-title">没有找到想要到答案？</p>
       <p>加入QQ群：113415272</p>
     </div>
-    <videoDialog ref="child"></videoDialog>
+    <Video ref="child"></Video>
   </div>
 </template>
 

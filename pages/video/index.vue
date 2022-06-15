@@ -16,12 +16,12 @@
         </div>
       </div>
     </div>
-    <videoDialog ref="child"></videoDialog>
+    <Video ref="child"></Video>
   </div>
 </template>
 
 <script>
-  import Index from './index'
+import Index from './index'
 
-  export default Index
+export default Index
 </script>

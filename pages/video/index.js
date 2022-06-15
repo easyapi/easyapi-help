@@ -1,6 +1,6 @@
 import './index.scss'
 import {getArticleList} from '../../api/article'
-import videoDialog from '~/components/videoDialog/index'
+import videoDialog from '@/components/Video'
 
 export default {
   layout: 'header',

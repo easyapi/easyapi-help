@@ -44,7 +44,7 @@ export default {
     },
     openNews: function (e) {
       let id = e.target.dataset.id
-      window.location.href = `/article/${id}`
+      window.location.href = `/category/${id}`
     }
   }
 }
