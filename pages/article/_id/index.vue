@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='main'>
+    <div class='content py-12'>
       <div class='detail-wrapper'>
         <div class='detail-title'>
           <span>{{ article.title }}</span>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import _Id from './_id.js'
+  import Index from './index'
 
-export default _Id
+  export default Index
 </script>

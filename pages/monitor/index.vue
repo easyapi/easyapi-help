@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mon-content content h-full block mx-auto py-12">
+    <div class="content h-full block mx-auto py-12">
       <div class="mon-title text-2xl">监控方式</div>
       <el-divider></el-divider>
       <div class="flex">
