@@ -2,18 +2,23 @@
   <div>
     <Search/>
     <main class="main content block mx-auto">
-      <div class="question w-full">
-        <div class="question-title text-center w-full">常见问题</div>
-        <div v-for="item in question"
-             class="question-link inline-block text-center w-2/6 whitespace-nowrap overflow-hidden overflow-ellipsis">
-          <a :href="'/article?id='+item.articleId+'&detail='+item.articleCategory.articleCategoryId">
-            {{ item.title }}
-          </a>
-        </div>
+      <div class="question w-full py-24">
+        <div class="question-title text-center w-full mb-16">常见问题</div>
+        <ul class="flex justify-between flex-wrap question-list">
+          <li v-for="item in question" class="whitespace-nowrap overflow-hidden overflow-ellipsis text-center">
+            <a :href="'/article?id='+item.articleId+'&detail='+item.articleCategory.articleCategoryId">
+              {{ item.title }}
+            </a>
+          </li>
+        </ul>
+        <!--<div v-for="item in question"-->
+        <!--class="question-link inline-block text-center mx-4 ">-->
+
+        <!--</div>-->
       </div>
     </main>
-    <div class="questionType w-full">
-      <div class="questionType-title w-full text-center">问题分类</div>
+    <div class="questionType w-full py-24">
+      <div class="questionType-title w-full text-center mb-24">问题分类</div>
       <div class="questionType-all block mx-auto content">
         <div class="questionType-item text-center inline-block" v-for="item in questionType">
           <a :href="'/article?id='+item.articleCategoryId+'&detail=0'">
@@ -26,8 +31,8 @@
         </div>
       </div>
     </div>
-    <div class="introduce-video block mx-auto content">
-      <div class="how-title text-center pb-4">视频介绍</div>
+    <div class="introduce-video block mx-auto content py-24">
+      <div class="how-title text-center mb-24">视频介绍</div>
       <div class="flex">
         <div class="product block mx-auto content">
           <ul class="product-ul w-full">

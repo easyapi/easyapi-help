@@ -5,12 +5,26 @@
 .main {
   .question {
     min-height: 100px;
-    margin-bottom: 30px;
 
     .question-title {
-      height: 20px;
       font-size: 28px;
-      margin-bottom: 30px;
+    }
+
+    .question-list {
+      margin: 0 auto;
+      width: 1110px;
+      font-size: 18px;
+
+
+      li {
+        width: 360px;
+        margin-top: 10px;
+        color: #18c1d6;
+
+        a {
+          color: #18c1d6;
+        }
+      }
     }
 
     .question-link {
@@ -18,24 +32,18 @@
       height: 20px;
       font-size: 16px;
       margin-bottom: 10px;
-
-      a {
-        color: #18c1d6;
-      }
+      width: 30%;
     }
   }
 }
 
 .questionType {
   min-height: 100px;
-  margin-bottom: 30px;
   background-color: #ecf1f4;
-  padding: 30px 0;
 
   .questionType-title {
     height: 20px;
     font-size: 28px;
-    margin-bottom: 30px;
   }
 
   .questionType-all {
@@ -80,7 +88,6 @@
 
 .introduce-video {
   min-height: 10px;
-  margin-top: 30px;
 
   .how-title {
     color: #000;
@@ -89,8 +96,6 @@
 
   .product {
     min-height: 10px;
-    margin-top: 30px;
-    margin-bottom: 50px;
 
     .product-ul {
       min-height: 10px;
@@ -119,7 +124,6 @@
 }
 
 .how-answer {
-  margin-bottom: 80px;
   color: #000;
   background-color: #ecf1f4;
 
