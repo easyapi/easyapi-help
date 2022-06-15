@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     '@/plugins/axios',
     {src: '~plugins/element-ui', ssr: true},
-    {src: '~plugins/nuxt-video-player-plugin.js', ssr: false}
+    {src: '~plugins/nuxt-aaaa-player-plugin.js', ssr: false}
   ],
   modules: ['@nuxtjs/axios'],
   buildModules: ['@nuxtjs/tailwindcss'],

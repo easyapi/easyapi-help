@@ -1,38 +1,9 @@
 import './index.scss'
 import Search from '~/components/Search/index'
+import videoDialog from '~/components/aaaa/index'
 import {getArticleList, getArticleCategoryList} from '../api/article'
 
 export default {
-//        async asyncData ({req, error, params, query}, callback) {
-//            let videoList = []
-//            let title = ''
-//            let video = ''
-//            let showVideo = false
-//            let question = []
-//            let questionType = []
-//
-//            let [res1, res2, res3] = await Promise.all([
-//                axios.get(`https://api2.easyapi.com/api/articles?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8&type=视频`),
-//                axios.get(`https://api2.easyapi.com/api/articles?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8&type=文章`),
-//                axios.get('https://api2.easyapi.com/api//article/categories?appKey=ja4fkcz35kfqywi7&appSecret=k1v8c637vr4swgr8')
-//            ])
-//            videoList = res1.content
-//            title = res1.content[0].title
-//            video = res1.content[0].video
-//            question = res2.content
-//            questionType = res3.data
-//
-//
-//            callback(null, {
-//                  videoList: videoList,
-//                  title: title,
-//                  video: video,
-//                  showVideo: showVideo,
-//                  question: question,
-//                  questionType: questionType
-//              }
-//            )
-//        },
   layout: 'header',
   head() {
     return {
@@ -46,7 +17,8 @@ export default {
     }
   },
   components: {
-    Search
+    Search,
+    videoDialog
   },
 
   data() {
@@ -54,7 +26,6 @@ export default {
       videoList: [],
       title: '',
       video: '',
-      showVideo: false,
       question: [],
       questionType: []
     }
@@ -79,7 +50,7 @@ export default {
     openVideo: function (title, video) {
       this.title = title
       this.video = video
-      this.showVideo = true
+      this.$refs.child.showVideo = true
     },
     deletePro: function () {
       this.showVideo = false

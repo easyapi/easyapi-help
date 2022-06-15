@@ -28,7 +28,7 @@ export default {
     getArticleList({q: id}, this).then(function (res) {
       let result = []
       res.data.content.forEach((v, k, value) => {
-//                    if(!v.video){
+//                    if(!v.aaaa){
         result[k] = v
 //                    }
       })
