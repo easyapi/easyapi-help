@@ -1,3 +1,31 @@
 .content {
   max-width: 1200px;
 }
+
+.product {
+  min-height: 10px;
+
+  .product-ul {
+    min-height: 10px;
+
+    li {
+      width: 210px;
+      height: 180px;
+      margin-right: 30px;
+      margin-bottom: 20px;
+
+      .ul-img {
+        height: 150px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .product-more {
+    border-radius: 3px;
+    color: #fff;
+    width: 120px;
+    padding: 10px 30px;
+    background-color: #18c1d6;
+  }
+}
