@@ -1,6 +1,6 @@
 import './index.scss'
 import Search from '~/components/Search/index'
-import videoDialog from '~/components/aaaa/index'
+import videoDialog from '~/components/videoDialog/index'
 import {getArticleList, getArticleCategoryList} from '../api/article'
 
 export default {
@@ -25,7 +25,6 @@ export default {
     return {
       videoList: [],
       title: '',
-      video: '',
       question: [],
       questionType: []
     }
@@ -48,12 +47,9 @@ export default {
     start() {
     },
     openVideo: function (title, video) {
-      this.title = title
-      this.video = video
+      this.$refs.child.title = title
+      this.$refs.child.video = video
       this.$refs.child.showVideo = true
-    },
-    deletePro: function () {
-      this.showVideo = false
     }
   }
 }
