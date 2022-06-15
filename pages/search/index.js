@@ -1,14 +1,36 @@
 import './index.scss'
+import Search from '~/components/Search/index'
+import getUrlParam from '../../utils/getParamer'
+import {getArticleList} from '../../api/article'
 
 export default {
-  name: 'InfoGitHub',
-  head() {
+  layout: 'header',
+  name: "search",
+  mounted() {
+    //            let id = this.$route.params.search_id
+    let id = getUrlParam('id')
+    this.message = id
+
+    let _this = this
+    getArticleList({q: id}, this).then(function (res) {
+      let result = []
+      res.data.content.forEach((v, k, value) => {
+//                    if(!v.aaaa){
+        result[k] = v
+//                    }
+      })
+      _this.content = result
+      _this.size = result.length
+    })
+  },
+  data() {
     return {
-      title: '前端开源 - EasyAPI服务平台',
-      meta: [
-        {hid: 'description', name: 'description', content: 'EasyAPI前端开源计划'},
-        {hid: 'keyword', name: 'keyword', content: '前端开源'}
-      ]
+      content: [],
+      size: 0,
+      message: ''
     }
   },
+  components: {
+    Search
+  }
 }
