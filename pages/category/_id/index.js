@@ -1,6 +1,6 @@
 import './index.scss'
-import Search from '~/components/Search/index'
-import {getArticleList, getArticleCategoryList, getArticle} from '../../api/article'
+import Search from '@/components/Search'
+import {getArticleList, getArticleCategoryList} from '../../../api/article'
 
 export default {
   data() {

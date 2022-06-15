@@ -24,33 +24,33 @@
         <div class="w-6/12 flex justify-around">
           <div class="flex flex-col">
             <h2>产品介绍</h2>
-            <a class="text-xs" href="/product/doc">API协作</a>
-            <a class="text-xs" href="/product/lowcode">API低代码</a>
-            <a class="text-xs" href="/product/test">API测试</a>
-            <a class="text-xs" href="/product/interface">API服务</a>
-            <a class="text-xs" href="/product/monitor">API监控</a>
-            <a class="text-xs" href="/product/scene">API场景化服务</a>
+            <a class="text-xs" href="https://www.easyapi.com/product/doc">API协作</a>
+            <a class="text-xs" href="https://www.easyapi.com/product/lowcode">API低代码</a>
+            <a class="text-xs" href="https://www.easyapi.com/product/test">API测试</a>
+            <a class="text-xs" href="https://www.easyapi.com/product/interface">API服务</a>
+            <a class="text-xs" href="https://www.easyapi.com/product/monitor">API监控</a>
+            <a class="text-xs" href="https://www.easyapi.com/product/scene">API场景化服务</a>
           </div>
           <div class="flex flex-col">
             <h2>私有化方案</h2>
-            <a class="text-xs" href="/solution/portal">API管理门户</a>
-            <a class="text-xs" href="/solution/market">API服务市场</a>
-            <a class="text-xs" href="/solution/open">API开放平台</a>
+            <a class="text-xs" href="https://www.easyapi.com/solution/portal">API管理门户</a>
+            <a class="text-xs" href="https://www.easyapi.com/solution/market">API服务市场</a>
+            <a class="text-xs" href="https://www.easyapi.com/solution/open">API开放平台</a>
           </div>
           <div class="flex flex-col">
             <h2>使用文档</h2>
             <a class="text-xs" href="https://help.easyapi.com" target="_blank">帮助中心</a>
             <a class="text-xs" href="https://support.qq.com/products/352231" target="_blank">BUG反馈</a>
-            <a class="text-xs" href="/info/extension">浏览器插件</a>
-            <a class="text-xs" href="/info/github">前端开源计划</a>
+            <a class="text-xs" href="https://www.easyapi.com/info/extension">浏览器插件</a>
+            <a class="text-xs" href="https://www.easyapi.com/info/github">前端开源计划</a>
           </div>
           <div class="flex flex-col">
             <h2>关于</h2>
-            <a class="text-xs" href="/info/about">关于我们</a>
-            <a class="text-xs" href="/info/together">合作伙伴</a>
-            <a class="text-xs" href="/info/contact">联系我们</a>
-            <a class="text-xs" href="/info/support">支持我们</a>
-            <a class="text-xs" href="/post/">平台动态</a>
+            <a class="text-xs" href="https://www.easyapi.com/info/about">关于我们</a>
+            <a class="text-xs" href="https://www.easyapi.com/info/together">合作伙伴</a>
+            <a class="text-xs" href="https://www.easyapi.com/info/contact">联系我们</a>
+            <a class="text-xs" href="https://www.easyapi.com/info/support">支持我们</a>
+            <a class="text-xs" href="https://www.easyapi.com/post/">平台动态</a>
           </div>
         </div>
         <div class="w-2/12 flex justify-end text-center">

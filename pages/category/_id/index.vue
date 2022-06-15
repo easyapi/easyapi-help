@@ -19,7 +19,7 @@
         </div>
         <div class="main-content  w-5/6">
           <div class="w-full text-3xl">{{ name }}</div>
-          <a :href="'/article?id=6&detail='+item.articleId" class="main-content-a py-8" v-for="item in articles"
+          <a :href="'/article/' + item.articleId" class="main-content-a py-8" v-for="item in articles"
              v-if="articles.length>0">{{ item.title }}
           </a>
         </div>
@@ -28,8 +28,8 @@
   </div>
 </template>
 <script>
-  import Index from './index'
+import Index from './index'
 
-  export default Index
+export default Index
 </script>
 

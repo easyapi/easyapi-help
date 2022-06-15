@@ -21,7 +21,7 @@
       <div class="questionType-title w-full text-center mb-24">问题分类</div>
       <div class="questionType-all block mx-auto content">
         <div class="questionType-item text-center inline-block" v-for="item in questionType">
-          <a :href="'/article?id='+item.articleCategoryId+'&detail=0'">
+          <a :href="'/category/'+ item.articleCategoryId">
             <img class="float-left" :src="item.img">
             <div class="questionType-right float-left">
               <p class="questionType-right-title text-left">{{ item.name }}</p>
