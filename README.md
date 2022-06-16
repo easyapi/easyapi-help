@@ -36,7 +36,6 @@ $ npm run generate
  ├──assets              #资源目录，用于组织未编译的静态资源如STYLUS LESS、SASS 或 JavaScript
  │  ├──css              #css样式
  │  ├──images           #图片
- │  ├──stylus           #stylus预处理
  ├──components          #组件目录
  │  ├──footer           #footer组件
  │  ├──header           #header组件

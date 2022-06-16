@@ -15,7 +15,6 @@ module.exports = {
     ]
   },
   css: [
-    {src: '~/assets/stylus/base.styl', lang: 'stylus'},
     {src: 'element-ui/lib/theme-chalk/index.css'}
   ],
   plugins: [
