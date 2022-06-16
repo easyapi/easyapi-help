@@ -1,6 +1,6 @@
 import './index.scss'
 
-import {getArticle} from '../../../api/article'
+import {getArticle, getArticleList, getArticleCategoryList} from '../../../api/article'
 
 export default {
   name: 'ArticleDetail',
@@ -15,15 +15,30 @@ export default {
   },
   data() {
     return {
-      article: null
+      article: null,
+      menuList: [],
+      articles: [],
     }
   },
   async asyncData(context) {
-    let [res] = await Promise.all([
-      getArticle(context.route.params.id, context)
+    let [res1, res2, res3] = await Promise.all([
+      getArticle(context.route.params.id, context),
+      getArticleCategoryList({}, context),
+      getArticleList({}, context)
     ])
     return {
-      article: res.data.content
+      article: res1.data.content,
+      menuList: res2.data.content,
+      articles: res3.data.content
+    }
+  },
+  methods: {
+    open(val) {
+      console.log(val)
+      this.$router.push("/category/")
+    },
+    select(val) {
+      this.$router.push(val)
     }
   }
 }

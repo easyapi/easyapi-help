@@ -1,7 +1,47 @@
+import getRoutes from './router';
+
 module.exports = {
   /*
   ** Headers of the page
   */
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push(
+        {
+          name: 'index',
+          path: '/',
+          component: resolve(__dirname, 'pages/index')
+        },
+        {
+          name: 'video',
+          path: '/video',
+          component: resolve(__dirname, 'pages/video')
+        },
+        {
+          name: 'search',
+          path: '/search',
+          component: resolve(__dirname, 'pages/search')
+        },
+        {
+          name: 'monitor',
+          path: '/monitor',
+          component: resolve(__dirname, 'pages/monitor')
+        },
+        {
+          name: 'help',
+          path: '/help',
+          component: resolve(__dirname, 'pages/help'),
+          children: [
+            {
+              path: 'category/:category',
+              name: 'category',
+              component: resolve(__dirname, 'pages/category/_id')
+            },
+          ]
+        },
+      )
+    }
+  },
   head: {
     title: 'EasyAPI帮助中心专栏',
     meta: [

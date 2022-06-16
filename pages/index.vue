@@ -53,7 +53,7 @@
 </template>
 
 <script>
-  import Index from './index'
+  import Index from '.'
 
   export default Index
 </script>

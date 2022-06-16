@@ -1,6 +1,6 @@
 <template>
   <section class="relative pt-24 pb-12 bg-contain bg-center bg-no-repeat">
-    <img v-if="back" src='/static/images/search/downPage.jpg' class="absolute z-10 left-0 top-0 w-full h-full"/>
+    <!--<img v-if="back" src='/static/images/search/downPage.jpg' class="absolute z-10 left-0 top-0 w-full h-full"/>-->
     <div class="search-logo relative z-50 mx-auto text-6xl text-center mb-6">EasyAPI 帮助中心</div>
     <div class="search-box mx-auto mb-12">
       <el-input placeholder="搜索您的问题关键词，如「测试」" v-model="searchText" class="input-with-select">
