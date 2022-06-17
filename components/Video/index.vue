@@ -1,35 +1,26 @@
 <template>
-  <div class="pro-alert fixed w-full h-full top-0 left-0" v-if="showVideo">
-    <div class="relative w-full h-full">
-      <div class="pro-content absolute top-1/2 left-1/2">
-        <div class="pro-title relative">
-          {{ title }}
-          <div class="pro-delete absolute cursor-pointer top-1/2" @click="deletePro">X</div>
-        </div>
-        <div class="pro-video p-4">
-          <video class="w-full h-full" controls :src="video"></video>
-        </div>
-      </div>
-    </div>
-  </div>
+  <el-dialog :title="title"
+             :visible.sync="showVideo">
+    <video class="w-full h-full" controls :src="video"></video>
+  </el-dialog>
 </template>
 
 <script>
-export default {
-  name: "Video",
-  data() {
-    return {
-      showVideo: false,
-      title: "",
-      video: '',
-    }
-  },
-  methods: {
-    deletePro: function () {
-      this.showVideo = false
+  export default {
+    name: "Video",
+    data() {
+      return {
+        showVideo: false,
+        title: "",
+        video: '',
+      }
+    },
+    methods: {
+      deletePro: function () {
+        this.showVideo = false
+      }
     }
   }
-}
 </script>
 
 <style scoped>
