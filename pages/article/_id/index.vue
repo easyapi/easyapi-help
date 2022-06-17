@@ -1,45 +1,12 @@
 <template>
   <div>
-    <div class='content py-12'>
-      <div class="flex">
-        <div class="w-1/6">
-          <!--<ul class="w-full">-->
-          <!--<li class="h-12" v-for="item in menuList" :data-name="item.name"-->
-          <!--:data-id="item.articleCategoryId"-->
-          <!--v-bind:class="name === item.name?'orange':''"-->
-          <!--@click="openNews">-->
-          <!--<span class="menu-name cursor-pointer">{{ item.name }}</span>-->
-          <!--</li>-->
-          <!--</ul>-->
-          <el-col :span="24">
-            <el-menu
-              @open="open"
-              @select="select"
-              :default-active="$route.path"
-              class="el-menu-vertical-demo">
-              <el-submenu v-for="item in menuList" :index="item.articleCategoryId">
-                <template slot="title">
-                  <span>{{item.name}}</span>
-                </template>
-                <el-menu-item-group>
-                  <el-menu-item class="overflow-hidden whitespace-nowrap overflow-ellipsis" v-for="url in articles"
-                                :index='"/article/"+url.articleId'>
-                    <span slot="title">{{url.title}}</span>
-                  </el-menu-item>
-                </el-menu-item-group>
-              </el-submenu>
-            </el-menu>
-          </el-col>
+    <div class='content'>
+      <div class='detail-wrapper'>
+        <div class='detail-title'>
+          <span>{{ article.title }}</span>
+          <label class='time'>{{ article.updateTime.split(' ')[0] }}</label>
         </div>
-        <div class="main-content pl-8 w-5/6">
-          <div class='detail-wrapper'>
-            <div class='detail-title'>
-              <span>{{ article.title }}</span>
-              <label class='time'>{{ article.updateTime.split(' ')[0] }}</label>
-            </div>
-            <div class='detail-content' v-html='article.content'>
-            </div>
-          </div>
+        <div class='detail-content' v-html='article.content'>
         </div>
       </div>
     </div>

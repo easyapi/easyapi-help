@@ -74,8 +74,10 @@ export default {
       window.location.href = `/category/${id}`
     },
     open(val) {
-      console.log(val)
-      // this.$router.push(val)
+      this.$router.push(val)
+    },
+    close(val){
+      this.$router.push(val)
     },
     select(val) {
       this.$router.push(val)

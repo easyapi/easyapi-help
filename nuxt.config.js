@@ -1,5 +1,3 @@
-import getRoutes from './router';
-
 module.exports = {
   /*
   ** Headers of the page
@@ -33,9 +31,14 @@ module.exports = {
           component: resolve(__dirname, 'pages/help'),
           children: [
             {
-              path: 'category/:category',
+              path: 'category/:categoryId',
               name: 'category',
-              component: resolve(__dirname, 'pages/category/_id')
+              component: resolve(__dirname, 'pages/category/_id/index.vue')
+            },
+            {
+              path: 'category/:categoryId/article/:articleId',
+              name: 'category',
+              component: resolve(__dirname, 'pages/article/_id/index.vue')
             },
           ]
         },

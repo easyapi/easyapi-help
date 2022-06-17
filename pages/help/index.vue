@@ -8,28 +8,21 @@
       <el-divider></el-divider>
       <div class="flex">
         <div class="w-1/6">
-          <!--<ul class="w-full">-->
-          <!--<li class="h-12" v-for="item in menuList" :data-name="item.name"-->
-          <!--:data-id="item.articleCategoryId"-->
-          <!--v-bind:class="name === item.name?'orange':''"-->
-          <!--@click="openNews">-->
-          <!--<span class="menu-name cursor-pointer">{{ item.name }}</span>-->
-          <!--</li>-->
-          <!--</ul>-->
           <el-col :span="24">
             <el-menu
               @open="open"
+              @close="close"
               @select="select"
               :default-active="$route.path"
               class="el-menu-vertical-demo">
-              <el-submenu v-for="item in menuList">
+              <el-submenu v-for="item in menuList" :index="'/help/category/'+item.articleCategoryId">
                 <template slot="title">
-                  <nuxt-link :to="'/help/category/'+item.articleCategoryId">
-                    <span>{{item.name}}</span>
-                  </nuxt-link>
+                  <span>{{item.name}}</span>
                 </template>
                 <el-menu-item-group>
-                  <el-menu-item class="overflow-hidden whitespace-nowrap overflow-ellipsis" v-for="url in item.article">
+                  <el-menu-item class="overflow-hidden whitespace-nowrap overflow-ellipsis" v-for="url in item.article"
+                                :index="'/help/category/'+item.articleCategoryId+'/article/'+url.articleId"
+                  >
                     <span slot="title">{{url.title}}</span>
                   </el-menu-item>
                 </el-menu-item-group>
@@ -37,7 +30,7 @@
             </el-menu>
           </el-col>
         </div>
-        <div>
+        <div class="w-5/6">
           <client-only>
             <nuxt/>
           </client-only>
