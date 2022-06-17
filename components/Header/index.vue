@@ -3,6 +3,8 @@
     <div class="header">
       <router-link to="/" class="header-logo">
         <img src="https://qiniu.easyapi.com/market/logo.svg"/>
+        <span class="circle mx-2"></span>
+        <span class="text-base">帮助中心</span>
       </router-link>
       <div class="header-user">
         <a v-if='!authenticationToken' href="https://account.easyapi.com/login">登陆</a>

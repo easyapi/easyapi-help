@@ -9,6 +9,14 @@
   justify-content: space-between;
   font-size: 14px;
 
+  .circle {
+    display: inline-block;
+    background: #fff;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
   .header-logo {
     cursor: pointer;
     margin-left: 50px;
@@ -19,11 +27,6 @@
 
     img {
       width: 120px
-    }
-
-    span {
-      color: #fff;
-      width: 6em;
     }
   }
 
