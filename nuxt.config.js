@@ -27,7 +27,7 @@ module.exports = {
         },
         {
           name: 'help',
-          path: '/help',
+          path: '/category',
           component: resolve(__dirname, 'pages/help'),
           children: [
             {

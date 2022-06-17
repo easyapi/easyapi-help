@@ -9,7 +9,6 @@ export default {
       menuList: [],
       articles: [],
       name: "列表",
-      path: ""
     }
   },
 
@@ -38,15 +37,6 @@ export default {
   },
   components: {
     Search
-  },
-  watch: {
-    $route(val) {
-      this.path = val.path
-    }
-  },
-  mounted() {
-    console.log(this.$route)
-    this.path = this.$route.path
   },
   methods: {
     // historyBack: function () {
