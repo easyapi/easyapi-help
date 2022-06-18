@@ -1,7 +1,10 @@
 <template>
   <div class="py-24">
     <div class="block mx-auto content">
-      <p class="text-4xl mb-8">产品介绍</p>
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item :to="{ path: '/' }">帮助中心</el-breadcrumb-item>
+        <el-breadcrumb-item>产品介绍</el-breadcrumb-item>
+      </el-breadcrumb>
       <div class="flex">
         <div class="product block mx-auto content">
           <ul class="product-ul w-full">

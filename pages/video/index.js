@@ -22,16 +22,19 @@ export default {
       showVideo: false
     }
   },
-  created() {
-    getArticleList({type: "视频"}, this).then((res) => {
-      this.videoList = res.data.content
-    })
-  },
   methods: {
     openVideo: function (title, video) {
       this.$refs.child.title = title
       this.$refs.child.video = video
       this.$refs.child.showVideo = true
+    }
+  },
+  async asyncData(context) {
+    let [res] = await Promise.all([
+      getArticleList({type: "视频"}, context)
+    ])
+    return {
+      videoList: res.data.content
     }
   }
 }

@@ -19,7 +19,6 @@ export default {
     }
   },
   async asyncData(context) {
-    console.log(context)
     let [res] = await Promise.all([
       getArticle(context.route.params.id, context)
     ])
