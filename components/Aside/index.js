@@ -73,7 +73,7 @@ export default {
       console.log(this.menuList)
     },
     historyBack: function () {
-      // this.$router.push({path: '/'})
+      window.location.href = '/'
     },
     openNews: function (e) {
       let id = e.target.dataset.id
