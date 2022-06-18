@@ -1,6 +1,6 @@
 import './index.scss'
 import Search from '@/components/Search'
-import {getArticleList, getArticleCategoryList} from '../../../api/article'
+import {getArticleList, getArticleCategoryList} from '@/api/article'
 
 export default {
   // name: "category",
@@ -39,12 +39,5 @@ export default {
     Search
   },
   methods: {
-    // historyBack: function () {
-    //   this.$router.push({path: '/'})
-    // },
-    // openNews: function (e) {
-    //   let id = e.target.dataset.id
-    //   window.location.href = `/category/${id}`
-    // },
   }
 }

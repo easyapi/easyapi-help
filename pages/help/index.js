@@ -76,7 +76,7 @@ export default {
     open(val) {
       this.$router.push(val)
     },
-    close(val){
+    close(val) {
       this.$router.push(val)
     },
     select(val) {

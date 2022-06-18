@@ -1,7 +1,7 @@
 import './index.scss'
 import Search from '~/components/Search/index'
 import getUrlParam from '../../utils/getParamer'
-import {getArticleList} from '../../api/article'
+import {getArticleList} from '@/api/article'
 
 export default {
   layout: 'header',

@@ -1,5 +1,5 @@
 import './index.scss'
-import {getArticleList} from '../../api/article'
+import {getArticleList} from '@/api/article'
 import videoDialog from '@/components/Video'
 
 export default {

@@ -8,7 +8,7 @@
             <li class="cursor-pointer inline-block" v-for="(item, index) in videoList" :data-id="index"
                 @click="openVideo(item.title,item.video)">
               <p class="ul-img w-full">
-                <img class="w-full h-full" :src="item.img"/>
+                <img class="w-full h-full" :src="item.img" alt=""/>
               </p>
               <p class="text-center">{{ item.title }}</p>
             </li>

@@ -13,7 +13,7 @@
               placement="top"
               width="100"
               trigger="hover">
-              <img src="https://qiniu.easyapi.com/weixin-easyapi.jpg">
+              <img src="https://qiniu.easyapi.com/weixin-easyapi.jpg" alt="">
               <a slot="reference"><img class="w-12 mr-4" src="../../assets/images/wechat.svg" alt=""></a>
             </el-popover>
             <a href="https://github.com/easyapi" target="_blank">
