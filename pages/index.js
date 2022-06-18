@@ -1,7 +1,7 @@
 import './index.scss'
 import Search from '~/components/Search/index'
 import Video from '@/components/Video'
-import {getArticleList, getArticleCategoryList} from '../api/article'
+import {getArticleList, getArticleCategoryList} from '@/api/article'
 
 export default {
   layout: 'header',
@@ -25,27 +25,22 @@ export default {
     return {
       videoList: [],
       title: '',
-      question: [],
-      questionType: []
+      questionList: [],
+      categoryList: []
     }
   },
   created() {
-    let _this = this
     getArticleList({type: "视频"}, this).then((res) => {
-      _this.videoList = res.data.content
-      _this.title = res.data.content[0].title
-      _this.video = res.data.content[0].video
+      this.videoList = res.data.content
     })
     getArticleList({type: "文章"}, this).then((res) => {
-      _this.question = res.data.content
+      this.questionList = res.data.content
     })
     getArticleCategoryList({}, this).then((res) => {
-      _this.questionType = res.data.content
+      this.categoryList = res.data.content
     })
   },
   methods: {
-    start() {
-    },
     openVideo: function (title, video) {
       this.$refs.child.title = title
       this.$refs.child.video = video

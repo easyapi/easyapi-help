@@ -10,14 +10,14 @@ export default {
     let id = getUrlParam('id')
     this.message = id
 
-    let _this = this
+    let that = this
     getArticleList({q: id}, this).then(function (res) {
       let result = []
       res.data.content.forEach((v, k, value) => {
         result[k] = v
       })
-      _this.content = result
-      _this.size = result.length
+      that.content = result
+      that.size = result.length
     })
   },
   data() {

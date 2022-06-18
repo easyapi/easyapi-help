@@ -1,10 +1,10 @@
 import './index.scss'
 import {getArticleList} from '@/api/article'
-import videoDialog from '@/components/Video'
+import Video from '@/components/Video'
 
 export default {
   layout: 'header',
-  components: {videoDialog},
+  components: {Video},
   head: {
     meta: [
       {
@@ -23,11 +23,8 @@ export default {
     }
   },
   created() {
-    let _this = this
     getArticleList({type: "视频"}, this).then((res) => {
-      _this.videoList = res.data.content
-      _this.title = res.data.content[0].title
-      _this.video = res.data.content[0].video
+      this.videoList = res.data.content
     })
   },
   methods: {

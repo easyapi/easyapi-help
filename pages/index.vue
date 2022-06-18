@@ -5,7 +5,7 @@
       <div class="question w-full py-24">
         <div class="question-title text-center w-full mb-16">常见问题</div>
         <ul class="flex justify-between flex-wrap question-list">
-          <li v-for="item in question" class="whitespace-nowrap overflow-hidden overflow-ellipsis text-center">
+          <li v-for="item in questionList" class="whitespace-nowrap overflow-hidden overflow-ellipsis text-center">
             <a :href="'/article/'+item.articleId">
               {{ item.title }}
             </a>
@@ -16,7 +16,7 @@
     <div class="questionType w-full py-24">
       <div class="questionType-title w-full text-center mb-24">问题分类</div>
       <div class="questionType-all block mx-auto content">
-        <div class="questionType-item text-center inline-block" v-for="item in questionType">
+        <div class="questionType-item text-center inline-block" v-for="item in categoryList">
           <a :href="'/category/'+ item.articleCategoryId">
             <img class="float-left" :src="item.img">
             <div class="questionType-right float-left">
