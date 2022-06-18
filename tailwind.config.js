@@ -1,7 +1,7 @@
 module.exports = {
-  content: [],
   theme: {
-    extend: {},
-  },
-  plugins: [],
+    height: {
+      400: '400px',
+    }
+  }
 }
