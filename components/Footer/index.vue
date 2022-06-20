@@ -77,3 +77,9 @@
 
   export default Index
 </script>
+
+<style scoped>
+  .el-divider {
+    background-color: #606266
+  }
+</style>

@@ -1,10 +1,11 @@
 <template>
-  <div class="py-24">
+  <div>
+    <el-breadcrumb class="ml-4 mg-t-24" separator-class="el-icon-arrow-right">
+      <el-breadcrumb-item :to="{ path: '/' }">帮助中心</el-breadcrumb-item>
+      <el-breadcrumb-item>产品介绍</el-breadcrumb-item>
+    </el-breadcrumb>
+    <el-divider></el-divider>
     <div class="block mx-auto content">
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">帮助中心</el-breadcrumb-item>
-        <el-breadcrumb-item>产品介绍</el-breadcrumb-item>
-      </el-breadcrumb>
       <div class="flex">
         <div class="product block mx-auto content">
           <ul class="product-ul w-full">
@@ -24,7 +25,7 @@
 </template>
 
 <script>
-import Index from './index'
+  import Index from './index'
 
-export default Index
+  export default Index
 </script>
