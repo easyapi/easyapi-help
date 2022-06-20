@@ -15,7 +15,23 @@ export default {
   },
   data() {
     return {
-      article: null
+      article: null,
+      articleObj: {},
+    }
+  },
+  mounted() {
+    this.getArticle()
+  },
+  methods: {
+    getArticle() {
+      let params = {}
+      getArticle(this.$route.params.id, this).then(res => {
+        if (res.data.code === 1) {
+          this.articleObj = res.data.content
+          localStorage.setItem("articleName", res.data.content.title)
+          this.$root.$emit('setdata', res.data.content.title)
+        }
+      })
     }
   },
   async asyncData(context) {
@@ -25,5 +41,5 @@ export default {
     return {
       article: res.data.content
     }
-  }
+  },
 }

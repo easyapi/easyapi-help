@@ -1,11 +1,12 @@
 <template>
   <div>
-    <!--<Search background="1"/>-->
+    <el-breadcrumb class="ml-12 mg-t-24" separator-class="el-icon-arrow-right">
+      <el-breadcrumb-item @click.native="goBack" :to="{ path: '/' }">帮助中心</el-breadcrumb-item>
+      <el-breadcrumb-item @click.native="goCategory"><a :href='"/category/"+articleCategoryId'>{{ categoryName }}</a></el-breadcrumb-item>
+      <el-breadcrumb-item v-if="articleName">{{articleName}}</el-breadcrumb-item>
+    </el-breadcrumb>
+    <el-divider></el-divider>
     <main class="main-all mx-auto content py-12">
-      <div class="cursor-pointer" @click="historyBack">
-        <span class="text-xl"> 帮助中心 </span> > {{ name }}
-      </div>
-      <el-divider></el-divider>
       <div class="flex">
         <div class="w-1/6">
           <el-col :span="24">

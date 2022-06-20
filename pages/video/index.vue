@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-breadcrumb class="ml-4 mg-t-24" separator-class="el-icon-arrow-right">
+    <el-breadcrumb class="ml-12 mg-t-24" separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">帮助中心</el-breadcrumb-item>
       <el-breadcrumb-item>产品介绍</el-breadcrumb-item>
     </el-breadcrumb>

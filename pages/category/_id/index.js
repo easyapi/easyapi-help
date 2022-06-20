@@ -8,7 +8,7 @@ export default {
     return {
       menuList: [],
       articles: [],
-      name: "列表",
+      categoryName: localStorage.getItem("categoryName"),
     }
   },
 
@@ -38,6 +38,5 @@ export default {
   components: {
     Search
   },
-  methods: {
-  }
+  methods: {}
 }

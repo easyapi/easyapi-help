@@ -1,6 +1,6 @@
 import './index.scss'
 import Search from '@/components/Search'
-import {getArticleList, getArticleCategoryList} from '@/api/article'
+import {getArticleList, getArticleCategoryList, getArticle} from '@/api/article'
 
 export default {
   name: "category",
@@ -8,9 +8,28 @@ export default {
     return {
       menuList: [],
       articles: [],
-      name: "列表",
+      categoryName: localStorage.getItem("categoryName"),
+      articleName: localStorage.getItem("articleName"),
+      articleCategoryId: localStorage.getItem("articleCategoryId"),
       path: "",
+      article: null
     }
+  },
+
+  watch: {
+    $route(route) {
+      if (route) {
+        if (route.path.indexOf("category") > 0) {
+          console.log(1)
+          let id = Number(route.params.id)
+          for (let item of this.menuList) {
+            if (id === item.articleCategoryId) {
+              this.categoryName = item.name
+            }
+          }
+        }
+      }
+    },
   },
 
   // async asyncData(content) {
@@ -41,11 +60,23 @@ export default {
   },
   mounted() {
     this.getArticleCategoryList()
-    console.log(this.$route)
+    this.$root.$on('setdata', (data) => {
+      this.articleName = data
+    })
+
   },
   computed: {
     defaultActive() {
       return '/' + this.$route.path.split('/').reverse()[0];
+    }
+  },
+  async asyncData(context) {
+    let [res] = await Promise.all([
+      getArticle(context.route.params.id, context)
+    ])
+    console.log(res.data.content, 111)
+    return {
+      article: res.data.content
     }
   },
   methods: {
@@ -70,7 +101,6 @@ export default {
         }
       })
       this.menuList = list
-      console.log(this.menuList)
     },
     historyBack: function () {
       window.location.href = '/'
@@ -81,12 +111,27 @@ export default {
     },
     open(val) {
       this.$router.push(val)
+      localStorage.setItem('articleName', "")
+      this.articleName = ""
+      let id = Number(val.replace(/[^0-9]/ig, ""))
+      for (let item of this.menuList) {
+        if (id === item.articleCategoryId) {
+          localStorage.setItem('categoryName', item.name)
+        }
+      }
+    },
+    goBack() {
+      window.location.href = `/`
+    },
+    goCategory() {
+      // this.$root.$emit('setdata', "")
+      this.articleName = ""
     },
     close(val) {
-      this.$router.push(val)
+      // this.$router.push(val)
     },
     select(val) {
       this.$router.push(val)
-    }
+    },
   }
 }

@@ -45,6 +45,16 @@ export default {
       this.$refs.child.title = title
       this.$refs.child.video = video
       this.$refs.child.showVideo = true
+    },
+    jumpCategory(item) {
+      window.location.href = '/category/' + item.articleCategoryId
+      localStorage.setItem('categoryName', item.name)
+      localStorage.setItem('articleName', "")
+    },
+    jumpArticle(item) {
+      localStorage.setItem("categoryName", item.articleCategory.name)
+      localStorage.setItem("articleCategoryId", item.articleCategory.articleCategoryId)
+      localStorage.setItem("articleName", item.title)
     }
   }
 }
