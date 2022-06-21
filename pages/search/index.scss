@@ -3,7 +3,7 @@
 }
 
 .con {
-  border-bottom: 1px solid #dcdfe6;
+  border-bottom: 1px solid $--color--dcdfe6;
 }
 
 .searchText {
@@ -11,5 +11,5 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 4 ；
 }

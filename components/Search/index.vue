@@ -51,10 +51,10 @@
 
 <style scoped lang="scss">
   section {
-    background-color: #ecf1f4;
+    background-color: $--color--bg;
 
     .search-logo {
-      color: #1AB7CB;
+      color: $--color--1AB7CB;
       max-width: 600px;
     }
 

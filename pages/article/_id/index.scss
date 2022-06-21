@@ -8,10 +8,10 @@
 .detail-title {
   padding-bottom: 30px;
   font-size: 14px;
-  color: #a9a9a9;
+  color: $--color--a9;
   text-align: center;
   padding-top: 32px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $--color--ddd;
 }
 
 .detail-title span {
@@ -57,5 +57,5 @@
   max-width: 100%;
   margin: 20px auto;
   padding: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid $--color--ddd;
 }

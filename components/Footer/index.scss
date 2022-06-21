@@ -1,13 +1,13 @@
 .footer {
-  background: #27282C;
-  color: gray;
+  background: $--color--27282C;
+  color: $--color--gray;
   padding: 20px 0;
   font-size: 1.2rem;
 
   h2 {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #FDFDFE;
+    color: $--color--FDFDFE;
   }
 
   p {
@@ -15,11 +15,11 @@
   }
 
   a {
-    color: gray;
+    color: $--color--gray;
     margin-bottom: 10px;
 
     &:hover {
-      color: #fff;
+      color: $--color--ff;
       text-decoration: underline;
     }
   }
@@ -30,7 +30,7 @@
 }
 
 .color-00AEC5 {
-  color: #00AEC5;
+  color: $--color-primary;
 }
 
 .content {

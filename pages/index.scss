@@ -8,6 +8,7 @@
 
     .question-title {
       font-size: 28px;
+      color: $--color--333;
     }
 
     .question-list {
@@ -19,16 +20,16 @@
       li {
         width: 360px;
         margin-top: 10px;
-        color: #18c1d6;
+        color: $--color-primary;
 
         a {
-          color: #18c1d6;
+          color: $--color-primary;
         }
       }
     }
 
     .question-link {
-      color: #18c1d6;
+      color: $--color-primary;
       height: 20px;
       font-size: 16px;
       margin-bottom: 10px;
@@ -39,7 +40,7 @@
 
 .questionType {
   min-height: 100px;
-  background-color: #ecf1f4;
+  background-color: $--color--bg;
 
   .questionType-title {
     height: 20px;
@@ -51,16 +52,16 @@
 
     .questionType-item {
       width: 32%;
-      color: #18c1d6;
+      color: $--color-primary;
       min-height: 20px;
-      background-color: #f9f9f9;
+      background-color: $--color--f9;
       font-size: 12px;
       margin-bottom: 10px;
       padding: 20px 30px;
       margin-right: 10px;
 
       &:hover {
-        background-color: #F5F5F5;
+        background-color: $--color--f5;
       }
 
       img {
@@ -77,13 +78,13 @@
 
         .questionType-right-title {
           font-size: 16px;
-          color: #000;
+          color: $--color--333;
           margin-bottom: 10px;
         }
 
         .questionType-right-content {
           font-size: 12px;
-          color: grey;
+          color: $--color--grey;
         }
       }
     }
@@ -94,7 +95,7 @@
   min-height: 10px;
 
   .how-title {
-    color: #000;
+    color: $--color--333;
     font-size: 28px;
   }
 
@@ -119,20 +120,20 @@
 
     .product-more {
       border-radius: 3px;
-      color: #fff;
+      color: $--color--ff;
       width: 124px;
       padding: 10px 30px;
-      background-color: #18c1d6;
+      background-color: $--color-primary;
     }
   }
 }
 
 .how-answer {
-  color: #000;
-  background-color: #ecf1f4;
+  color: $--color--333;
+  background-color: $--color--bg;
 
   .how-answer-title {
-    color: #000;
+    color: $--color--333;
     font-size: 28px;
     margin-bottom: 2rem;
   }
@@ -145,11 +146,11 @@
     height: 365px;
     width: 425px;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: $--color--ff;
     box-shadow: 0 0 0;
 
     .pro-title {
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid $--color--grey;
       padding: 15px 15px;
       font-size: 14px;
 
@@ -163,7 +164,7 @@
       height: 310px;
 
       video {
-        background-color: #000000;
+        background-color: $--color--333;
       }
     }
   }

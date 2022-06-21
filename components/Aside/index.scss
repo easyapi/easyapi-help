@@ -3,11 +3,11 @@
 }
 
 .el-divider {
-  background-color: #dcdfe6;
+  background-color: $--color--dcdfe6;
 }
 
 .menu-name {
-  color: #57bfd3;
+  color: $--color--57bfd3;
 
   &:hover {
     text-decoration: underline;
@@ -15,10 +15,10 @@
 }
 
 .main-content-a {
-  color: grey;
+  color: $--color--grey;
   display: block;
   width: 100%;
-  border-bottom: 1px solid #dcdfe6;
+  border-bottom: 1px solid $--color--dcdfe6;
 }
 
 .mg-t-24 {

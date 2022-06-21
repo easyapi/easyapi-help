@@ -58,14 +58,19 @@ module.exports = {
     ]
   },
   css: [
-    {src: 'element-ui/lib/theme-chalk/index.css'}
+    {src: 'element-ui/lib/theme-chalk/index.css'},
   ],
   plugins: [
     '@/plugins/axios',
     {src: '~plugins/element-ui', ssr: true},
     {src: '~plugins/nuxt-video-player-plugin.js', ssr: false}
   ],
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
+  styleResources: {
+    scss: [
+      './assets/style/variables.scss', // 全局 scss 变量
+    ]
+  },
   buildModules: ['@nuxtjs/tailwindcss'],
   tailwindcss: {
     cssPath: '@/assets/css/tailwind.css',
@@ -78,8 +83,8 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: {
-    color: '#18c1d6',
-    failedColor: '#18c1d6'
+    color: '$--color-primary',
+    failedColor: '$--color-primary'
   },
   /*
   ** Build configuration
