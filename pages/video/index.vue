@@ -10,7 +10,7 @@
         <div class="product block mx-auto content">
           <ul class="product-ul w-full">
             <li class="cursor-pointer inline-block" v-for="(item, index) in videoList" :data-id="index"
-                @click="openVideo(item.title,item.video)">
+                @click="openVideo(item.title, item.video)">
               <p class="ul-img w-full">
                 <img class="w-full h-full" :src="item.img" alt=""/>
               </p>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import Index from './index'
+import Index from './index'
 
-  export default Index
+export default Index
 </script>

@@ -17,8 +17,6 @@ export default {
   data() {
     return {
       videoList: [],
-      title: '',
-      video: '',
       showVideo: false
     }
   },

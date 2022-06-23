@@ -5,21 +5,16 @@
 </template>
 
 <script>
-  export default {
-    name: "Video",
-    data() {
-      return {
-        showVideo: false,
-        title: "",
-        video: '',
-      }
-    },
-    methods: {
-      deletePro: function () {
-        this.showVideo = false
-      }
+export default {
+  name: "Video",
+  data() {
+    return {
+      showVideo: false,
+      title: "",
+      video: '',
     }
   }
+}
 </script>
 
 <style scoped>

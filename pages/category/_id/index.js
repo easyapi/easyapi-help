@@ -3,7 +3,7 @@ import Search from '@/components/Search'
 import {getArticleList, getArticleCategoryList} from '@/api/article'
 
 export default {
-  // name: "category",
+  name: "CategoryDetail",
   data() {
     return {
       menuList: [],
@@ -22,7 +22,6 @@ export default {
       menuList: res2.data.content
     }
   },
-
   layout: 'header',
   head() {
     return {
@@ -37,6 +36,5 @@ export default {
   },
   components: {
     Search
-  },
-  methods: {}
+  }
 }

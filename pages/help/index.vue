@@ -17,13 +17,13 @@
               class="el-menu-vertical-demo">
               <el-submenu v-for="item in menuList" :index="'/help/category/'+item.articleCategoryId">
                 <template slot="title">
-                  <span>{{item.name}}</span>
+                  <span>{{ item.name }}</span>
                 </template>
                 <el-menu-item-group>
                   <el-menu-item class="overflow-hidden whitespace-nowrap overflow-ellipsis" v-for="url in item.article"
                                 :index="'/help/category/'+item.articleCategoryId+'/article/'+url.articleId"
                   >
-                    <span slot="title">{{url.title}}</span>
+                    <span slot="title">{{ url.title }}</span>
                   </el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
@@ -40,8 +40,8 @@
   </div>
 </template>
 <script>
-  import Index from '.'
+import Index from '.'
 
-  export default Index
+export default Index
 </script>
 

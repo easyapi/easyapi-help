@@ -15,24 +15,12 @@ export default {
   },
   data() {
     return {
-      article: null,
-      articleObj: {},
+      article: {}
     }
   },
   mounted() {
-    this.getArticle()
-  },
-  methods: {
-    getArticle() {
-      let params = {}
-      getArticle(this.$route.params.id, this).then(res => {
-        if (res.data.code === 1) {
-          this.articleObj = res.data.content
-          localStorage.setItem("articleName", res.data.content.title)
-          this.$root.$emit('setdata', res.data.content.title)
-        }
-      })
-    }
+    localStorage.setItem("articleName", this.article.title)
+    this.$root.$emit('setdata', this.article.title)
   },
   async asyncData(context) {
     let [res] = await Promise.all([
@@ -41,5 +29,6 @@ export default {
     return {
       article: res.data.content
     }
+
   },
 }
