@@ -17,9 +17,9 @@ export default {
   methods: {
     handleCommand(command) {
       if (command === 'notice') {
-        window.open(`https://team.easyapi.com/notification`)
+        window.open(`https://${team.url}.easyapi.com/notification`)
       } else if (command === 'edit') {
-        window.open(`https://team.easyapi.com/user/edit`)
+        window.open(`https://${team.url}.easyapi.com/user/edit`)
       } else if (command === 'quitLogin') {
         this.quitLogin()
       }

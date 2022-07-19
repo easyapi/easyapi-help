@@ -57,20 +57,13 @@ module.exports = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ]
   },
-  css: [
-    {src: 'element-ui/lib/theme-chalk/index.css'},
-  ],
+  css: ['@/assets/scss/variables.scss', '@/assets/scss/element-variables.scss'],
   plugins: [
     '@/plugins/axios',
     {src: '~plugins/element-ui', ssr: true},
     {src: '~plugins/nuxt-video-player-plugin.js', ssr: false}
   ],
-  modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
-  styleResources: {
-    scss: [
-      './assets/style/variables.scss', // 全局 scss 变量
-    ]
-  },
+  modules: ['@nuxtjs/axios'],
   buildModules: ['@nuxtjs/tailwindcss'],
   tailwindcss: {
     cssPath: '@/assets/css/tailwind.css',
@@ -90,19 +83,22 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    extractCSS: {allChunks: true},
-    vendor: ['element-ui']
-    // babel: {
-    //   plugins: [
-    //     [
-    //       'component',
-    //       {
-    //         libraryName: 'element-ui',
-    //         styleLibraryName: 'theme-chalk'
-    //       }
-    //     ]
-    //   ]
-    // }
+    transpile: [/^element-ui/],
+    extend(config, ctx) {
+    },
+    maxChunkSize: 300000, // 单个包最大尺寸
+    extractCSS: true, // 单独提取CSS
+    babel: {
+      plugins: [
+        [
+          'component',
+          {
+            libraryName: 'element-ui',
+            styleLibraryName: 'theme-chalk'
+          }
+        ]
+      ]
+    }
   },
   server: {
     port: 3000
